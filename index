@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Street Runner 3D - Single and Multiplayer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="ui">
+        <div id="p1Stat" class="stat-box">Vàng: <span id="p1Score">0</span> <span id="p1LivesUI"></span></div>
+        <div id="p2Stat" class="stat-box" style="display:none; color:#ff007b; border-color:#ff007b;">P2: <span id="p2Score">0</span> <span id="p2LivesUI"></span></div>
+        <div class="stat-box" style="cursor:pointer;" onclick="togglePause()">TẠM DỪNG (P)</div>
+    </div>
+    <canvas id="gameCanvas" width="800" height="500"></canvas>
+    <div id="mainOverlay" class="full-overlay">
+        <div class="fixed-title">Street Runner 3D</div>
+        <div id="menuCard" class="card">
+            <p>CHỌN ĐỘ KHÓ:</p>
+            <div class="diff-container">
+                <div class="diff-btn" onclick="setDiff(0)">DỄ</div>
+                <div class="diff-btn active" onclick="setDiff(1)">VỪA</div>
+                <div class="diff-btn" onclick="setDiff(2)">KHÓ</div>
+            </div>
+            <button onclick="startMode('single')">CHƠI ĐƠN</button>
+            <button style="background: #ff007b; color: white;" onclick="startMode('multi')">2 NGƯỜI CHƠI (VS)</button>
+        </div>
+        <div id="deathCard" class="card" style="display: none;">
+            <div id="vsResult" style="display:none;">
+                <h2 id="winnerText" style="color: #27ae60;"></h2>
+                <h3 id="loserText" style="color: #e74c3c;"></h3>
+            </div>
+            <h2 id="singleStatus" style="color: #ff3333; margin-bottom: 15px; display:none;">BẠN ĐÃ THUA!</h2>
+            <button id="btnRevive" style="background: #27ae60; color: white;" onclick="startAd()">HỒI SINH (XEM QC)</button>
+            <button style="background: #c0392b; color: white;" onclick="backToHome()">TRỞ VỀ TRANG CHỦ</button>
+        </div>
+    </div>
+    <div id="pauseOverlay" class="full-overlay" style="display: none; z-index: 150;">
+        <div class="card">
+            <h2>ĐANG TẠM DỪNG</h2>
+            <button onclick="togglePause()">TIẾP TỤC (P)</button>
+            <button style="background: #c0392b; color: white;" onclick="backToHome()">THOÁT RA MENU</button>
+        </div>
+    </div>
+    <div id="adOverlay" class="full-overlay" style="display:none; background: black; z-index: 200;">
+        <p style="font-size: 80px;">💰</p>
+        <p>Hồi sinh sau: <span id="adTimer" style="font-size: 40px; color: gold;">5</span></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
