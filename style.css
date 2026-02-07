@@ -1,0 +1,11 @@
+body { margin: 0; background: #111; display: flex; justify-content: center; align-items: center; height: 100vh; font-family: 'Arial', sans-serif; overflow: hidden; color: white; }
+canvas { box-shadow: 0 0 50px #000; border-radius: 8px; background: #000; display: block; }
+#ui { position: absolute; top: 10px; width: 760px; display: flex; justify-content: space-between; z-index: 10; pointer-events: none; }
+.stat-box { background: rgba(0,0,0,0.8); padding: 8px 20px; border-radius: 20px; color: gold; font-weight: bold; border: 1px solid gold; pointer-events: auto; }
+.full-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 100; background: rgba(0,0,0,0.9); }
+.card { background: #222; padding: 30px; border-radius: 15px; border: 2px solid #444; text-align: center; width: 350px; }
+.fixed-title { color: gold; font-size: 50px; margin-bottom: 20px; text-shadow: 0 0 20px orange; font-weight: 900; }
+button { background: gold; border: none; padding: 15px; color: #000; font-size: 18px; font-weight: bold; border-radius: 10px; cursor: pointer; margin: 10px 0; width: 100%; }
+.diff-container { display: flex; gap: 5px; margin: 15px 0; }
+.diff-btn { background: #444; color: white; padding: 10px; flex: 1; border-radius: 5px; cursor: pointer; }
+.diff-btn.active { background: #f39c12; border: 2px solid white; }
